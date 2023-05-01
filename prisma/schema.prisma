@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model fault_data {
+  id         Int      @id @default(autoincrement())
+  magnitute  Float
+  date_utc   DateTime @db.Timestamp(6)
+  fault_id   Int?
+  created_at DateTime @db.Timestamp(6)
+  updated_at DateTime @db.Timestamp(6)
+
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model faults {
+  fault_id   Int      @id @default(autoincrement())
+  fault_name String   @db.VarChar(255)
+  created_at DateTime @db.Timestamp(6)
+  updated_at DateTime @db.Timestamp(6)
+
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model raw_data {
+  raw_id         Int      @id @default(autoincrement())
+  date_utc       DateTime @db.Timestamp(6)
+  magnitute      Float
+  lat            Float
+  long           Float
+  utm_x          Int
+  utm_y          Int
+  depth          Int?
+  phase          Int?
+  center_th      String?  @db.VarChar
+  center_en      String?  @db.VarChar
+  severity_level Int
+  created_at     DateTime @db.Timestamp(6)
+  updated_at     DateTime @db.Timestamp(6)
+
+}

@@ -1,0 +1,27 @@
+{
+  "name": "service-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "updatedb": "npx prisma db pull",
+    "generate": "npx prisma generate",
+    "store-data": "node ./services/store-data.js",
+    "test":"nodemon ./test.moment.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.12.0",
+    "cookie-parser": "~1.4.4",
+    "csv-parse": "^5.3.6",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "fs": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "moment": "^2.29.4",
+    "morgan": "~1.9.1",
+    "prisma": "^4.12.0"
+  }
+}
